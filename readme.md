@@ -5,18 +5,15 @@
 Before you start:
    - Install maven build management tool.
    - Install Intellij Idea tool.
-   - Install Docker tool box for windows.
-        - https://docs.docker.com/toolbox/toolbox_install_windows/
-   - Some of imp docker info below:
-        - Docker VM details
-     		- IP: 192.168.99.100
-            - User: docker
-            - Password: tcuser
-        - Other Docker VM command and details of SSH into DOCKER VM
-            - https://devilbox.readthedocs.io/en/latest/howto/docker-toolbox/ssh-into-docker-toolbox.html
-            - echo $DOCKER_HOST // to know docker ip address and host name.
+   - Install Docker Desktop for Windows. Benefit of having this is : It brings up with docker installation 
+     and kubernetes as well. So you do not need to install minikube separately. Most imp, these both the 
+     installation(docker and kubernetes) runs locally on your system. Below is the link to download
+        - https://hub.docker.com/editions/community/docker-ce-desktop-windows
+   - Add new env variable KUBECONFIG in system and give value to it (default location is: C:\Users\<username>\.kube\config)
+   - By this time, your system is all set with Docker and Kubernetes.
+   - Type "docker -v" and "kubectl get nodes" to check if both these working.
    - To build docker image, use command "mvn clean install"
-   - Above cmd will create docker image. You can use following docker cmds:
+   - Above cmd will create docker image. Fallowing are useful docker cmds:
             
             - docker ps //list running containers
             - docker ps -a //list all running and stop containers
