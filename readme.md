@@ -5,10 +5,14 @@
 Before you start:
    - Install maven build management tool.
    - Install Intellij Idea tool.
-   - Install Docker Desktop for Windows. Benefit of having this is : It brings up with docker installation 
-     and kubernetes as well. So you do not need to install minikube separately. Most imp, these both the 
-     installation(docker and kubernetes) runs locally on your system. Below is the link to download
-        - https://hub.docker.com/editions/community/docker-ce-desktop-windows
+   - Install Docker Desktop for Windows. Benefit of having this is : 
+        - It brings up with docker installation and kubernetes as well. 
+        - You do not need to install minikube separately. 
+        - Most imp, these both the installation(docker and kubernetes) runs locally on your system.
+        - Docker desktop also has rich UI from where you can see all container running, you can stop
+          delete the containers.
+        - Below is the link to download
+            - https://hub.docker.com/editions/community/docker-ce-desktop-windows
    - Add new env variable KUBECONFIG in system and give value to it (default location is: C:\Users\<username>\.kube\config)
    - By this time, your system is all set with Docker and Kubernetes.
    - Type "docker -v" and "kubectl get nodes" to check if both these working.
@@ -30,14 +34,7 @@ Before you start:
 
 Run RestfulWebServicesApplication as a Java Application.
 
-As DOcker tools box is small VM, runs on Windows host. Running below url won't work in browser. 
-- http://localhost:9090/hello-world
-
-To make url working, you have to use docker vm ip address which you can get by typeing below command on terminal
-- echo %DOCKER_HOST%
-- output of above cmd:  tcp://192.168.99.100:2376
-- Now in browser type: http://192.168.99.100:9090/hello-world
-- below output you will see in browser.
+- http://localhost:9090/hello
 
 ```txt
 Hello World V1 abcde
