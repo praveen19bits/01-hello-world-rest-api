@@ -1,0 +1,5 @@
+Using this files, it is shown that how one can create two different versions of application.
+- First create images of two different version and push it to docker hub.
+- then using these yaml files, create deployment and service.
+- using service one distribute the load to al lteh version and specific version of application.
+

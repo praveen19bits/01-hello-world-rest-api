@@ -1,0 +1,56 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    app: hello-world-rest-api
+    version: v1
+  name: hello-world-rest-api-v1
+  namespace: default
+spec:
+  replicas: 3
+  minReadySeconds: 45
+  selector:
+    matchLabels:
+      app: hello-world-rest-api
+      version: v1
+  template:
+    metadata:
+      labels:
+        app: hello-world-rest-api
+        version: v1
+    spec:
+      containers:
+      - image: praveen19bits/hello-world-rest-api:1.0.0
+        imagePullPolicy: IfNotPresent # will not pull image if already present. In case of change in existing image, make it "Always" then only new image will be pulled else pods will be running with old image.
+        name: hello-world-rest-api
+      restartPolicy: Always
+      terminationGracePeriodSeconds: 30
+---
+
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    app: hello-world-rest-api
+    version: v2
+  name: hello-world-rest-api-v2
+  namespace: default
+spec:
+  replicas: 3
+  minReadySeconds: 45
+  selector:
+    matchLabels:
+      app: hello-world-rest-api
+      version: v2
+  template:
+    metadata:
+      labels:
+        app: hello-world-rest-api
+        version: v2
+    spec:
+      containers:
+      - image: praveen19bits/hello-world-rest-api:2.0.0
+        imagePullPolicy: IfNotPresent
+        name: hello-world-rest-api
+      restartPolicy: Always
+      terminationGracePeriodSeconds: 30
